@@ -24,7 +24,7 @@ void SceneBasic_Uniform::initScene()
     glClearColor(0.1f, 0.1f, 0.2f, 1.0f); 
     glEnable(GL_DEPTH_TEST);
 
-    view = glm::lookAt(glm::vec3(10.0f, 4.0f, 7.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    view = glm::lookAt(glm::vec3(5.0f, 4.0f, 7.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
     projection = glm::perspective(glm::radians(50.0f), (float)width / height, 0.5f, 100.0f);
 
@@ -127,7 +127,7 @@ void SceneBasic_Uniform::resize(int w, int h)
     glViewport(0, 0, w, h);
     width = w;
     height = h;
-    projection = glm::perspective(glm::radians(60.0f), (float)width / height, 0.3f, 100.0f);
+    projection = glm::perspective(glm::radians(450.0f), (float)width / height, 0.3f, 100.0f);
 }
 
 void SceneBasic_Uniform::drawScene() {

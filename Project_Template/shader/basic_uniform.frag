@@ -19,7 +19,7 @@ uniform struct Lightlnfo {
 
 uniform struct Materiallnfo {
     float Rough;	// Roughness
-    bool Metal;	// Metallic (true) or dielectric (false)
+    bool Metal;	// Metallic
     vec3 Color;	// Diffuse color for dielectrics, f0 for metallic
 } Material;
 

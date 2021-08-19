@@ -17,7 +17,10 @@ uniform mat4 MVP;
 void main(){
 	TexCoord = VertexTexCoord;
 
+	//transfrom normal from model coordinates to view coordinates
 	Normal = normalize( NormalMatrix * VertexNormal);
+
+	//transform vertex position from model coordinates to view coordinates
 	Position = (ModelViewMatrix * vec4(VertexPosition, 1.0)).xyz;
 
 	gl_Position = MVP * vec4(VertexPosition, 1.0);
