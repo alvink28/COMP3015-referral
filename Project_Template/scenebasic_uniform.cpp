@@ -23,18 +23,18 @@ void SceneBasic_Uniform::initScene()
     glClearColor(0.1f, 0.1f, 0.2f, 1.0f); 
     glEnable(GL_DEPTH_TEST);
 
-    view = glm::lookAt(glm::vec3(0.0f, 4.0f, 7.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    view = glm::lookAt(glm::vec3(10.0f, 4.0f, 7.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
     projection = glm::perspective(glm::radians(50.0f), (float)width / height, 0.5f, 100.0f);
 
     lightAngle = 0.0f;
     lightRotationSpeed = 1.5f;
 
-    prog.setUniform("Light[0].L", glm::vec3(45.0f));
+    prog.setUniform("Light[0].L", glm::vec3(1.0f));
     prog.setUniform("Light[0].Position", view * lightPos);
-    prog.setUniform("Light[1].L", glm::vec3(0.3f));
+    prog.setUniform("Light[1].L", glm::vec3(1.0f));
     prog.setUniform("Light[1].Position", glm::vec4(0, 0.15f, -1.0f, 0));
-    prog.setUniform("Light[2].L", glm::vec3(45.0f));
+    prog.setUniform("Light[2].L", glm::vec3(1.0f));
     prog.setUniform("Light[2].Position", view * glm::vec4(-7, 3, 7, 1));
 }
 
@@ -75,7 +75,7 @@ void SceneBasic_Uniform::render()
     drawScene();
 }
 
-void SceneBasic_Uniform::setMatrices()
+void SceneBasic_Uniform::setMatrices(GLSLProgram& prog)
 {
     glm::mat4 mv = view * model;
     prog.setUniform("ModelViewMatrix", mv);
@@ -123,7 +123,7 @@ void SceneBasic_Uniform::drawFloor() {
     prog.setUniform("Material.Metal", 0);
     prog.setUniform("Material.Color", glm::vec3(0.2f));
     model = glm::translate(model, glm::vec3(0.0f, -0.75f, 0.0f));
-    setMatrices(); 
+    setMatrices(prog); 
     plane.render();
 }
 
@@ -135,6 +135,6 @@ void SceneBasic_Uniform::drawSpot(const glm::vec3& pos, float rough, int metal, 
     model = glm::translate(model, pos);
     model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
 
-    setMatrices(); 
+    setMatrices(prog); 
     mesh->render();
 }

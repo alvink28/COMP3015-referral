@@ -26,7 +26,7 @@ private:
     float tPrev, lightAngle, lightRotationSpeed;
     glm::vec4 lightPos;
 
-    void setMatrices();
+    void setMatrices(GLSLProgram&);
     void compile();
     void drawScene();
     void drawFloor();
