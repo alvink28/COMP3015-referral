@@ -9,12 +9,12 @@ Opening the project shows some models of a trophy with different PBR on them. On
 #### How does the program code work? How do the classes and functions fit together and who does what?
 
 The program reders a trophy obj. The lights moves around the objects to show the reflection better. Here are the main function in the scenebasic_uniform.cpp. 
-initScene: setup the light position and noise buffers.
-Compile: linked the vertex shader and fragment shader.
-Update: rotate the light position around the scene.
-render: call drawScene.
-drawScene: call drawFloor and setup the location of the trophys with different roughnes(Gold, copper, aluminum, titanium, silver)
-drawFloor: It draws the plane that the trophys on
+-initScene: setup the light position and noise buffers.
+-Compile: linked the vertex shader and fragment shader.
+-Update: rotate the light position around the scene.
+-render: call drawScene.
+-drawScene: call drawFloor and setup the location of the trophys with different roughnes(Gold, copper, aluminum, titanium, silver)
+-drawFloor: It draws the plane that the trophys on
 
 #### What makes your shader program special and how does it compare to similar things? (Where did you get the idea from? What did you start with? How did you make yours unique? Did you start with a given shader/project?)
 
