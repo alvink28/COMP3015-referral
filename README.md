@@ -6,7 +6,7 @@ Visual Studio 2019 16.9.2 and a Windows 10 machine were used to write this code.
 
 Please open the executable in the Project_template folder. Opening the project shows some models of a trophy with different PBR on them. On the back row from left to right: Gold, copper, aluminum, titanium, silver.
 
-<img src="https://github.com/alvink28/COMP3015-referral/main/trophy.JPG" alt="trophy" width="300"/>
+<img src="https://github.com/alvink28/COMP3015-referral/trophy.JPG" alt="trophy" width="300"/>
 
 #### How does the program code work? How do the classes and functions fit together and who does what?
 
