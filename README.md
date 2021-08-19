@@ -4,7 +4,7 @@ Visual Studio 2019 16.9.2 and a Windows 10 machine were used to write this code.
 
 #### How does the user interact with your executable? How do you open and control the software you wrote (exe file)?
 
-Opening the project shows some models of a trophy with different PBR on them. On the back row from left to right: Gold, copper, aluminum, titanium, silver.
+I did included an executable but I believe its not working, please open the project through Visual Studio. Opening the project shows some models of a trophy with different PBR on them. On the back row from left to right: Gold, copper, aluminum, titanium, silver.
 
 #### How does the program code work? How do the classes and functions fit together and who does what?
 
