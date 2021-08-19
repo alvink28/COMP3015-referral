@@ -15,7 +15,7 @@ using glm::vec3;
 
 SceneBasic_Uniform::SceneBasic_Uniform() : plane(20, 20, 1, 1), teapot(5, glm::mat4(1.0f)), tPrev(0.0f), lightPos(5.0f, 5.0f, 5.0f, 1.0f)
 {
-    mesh = ObjMesh::load("media/pig.obj");
+    mesh = ObjMesh::load("media/trophy.obj");
 }
 
 void SceneBasic_Uniform::initScene()
@@ -133,16 +133,16 @@ void SceneBasic_Uniform::resize(int w, int h)
 void SceneBasic_Uniform::drawScene() {
     drawFloor();
 
-    // Draw dielectric cows with varying roughness
-    int numCows = 9;
+    // Draw pigs with varying roughness
+    int numPigs = 9;
     glm::vec3 cowBaseColor(0.1f, 0.33f, 0.97f);
-    for (int i = 0; i < numCows; i++) {
-        float cowX = i * (10.0f / (numCows - 1)) - 5.0f;
-        float rough = (i + 1) * (1.0f / numCows);
+    for (int i = 0; i < numPigs; i++) {
+        float cowX = i * (10.0f / (numPigs - 1)) - 5.0f;
+        float rough = (i + 1) * (1.0f / numPigs);
         drawSpot(glm::vec3(cowX, 0, 0), rough, 0, cowBaseColor);
     }
 
-    // Draw metal cows
+    // Draw metal pigs
     float metalRough = 0.43f;
     //Gold
     drawSpot(glm::vec3(-3.0f, 0.0f, 3.0f), metalRough, 1, glm::vec3(1, 0.71f, 0.29f));
@@ -175,7 +175,7 @@ void SceneBasic_Uniform::drawSpot(const glm::vec3& pos, float rough, int metal, 
     prog.setUniform("Material.Metal", metal); 
     prog.setUniform("Material.Color", color); 
     model = glm::translate(model, pos);
-    model = glm::rotate(model, glm::radians(180.0f), glm::vec3(0.0f, 1.0f, 0.0f));
+    model = glm::rotate(model, glm::radians(90.0f), glm::vec3(-90.0f, 1.0f, 0.0f));
 
     setMatrices(prog); 
     mesh->render();
