@@ -4,6 +4,14 @@ const float PI = 3.14159265358979323846;
 in vec3 Position; 
 in vec3 Normal;
 
+//noise
+uniform vec4 Color;
+uniform sampler2D NoiseTex;
+
+uniform vec4 SkyColor = vec4(0.3, 0.3, 0.9, 1.0);
+uniform vec4 CloudColor = vec4(1.0, 1.0, 1.0, 1.0);
+in vec2 TexCoord;
+
 uniform struct Lightlnfo {
     vec4 Position; // Light position in cam. coords. 
     vec3 L;	// Intensity
@@ -67,6 +75,10 @@ vec3 microfacetModel( int lightIdx, vec3 position, vec3 n ) {
 }
 
 void main() {
+    vec4 noise = texture(NoiseTex, TexCoord);
+    float t = (cos(noise.a * PI) + 1.0) / 2.0;
+    vec4 color = mix(SkyColor, CloudColor, t);
+
     vec3 sum = vec3(0);
     vec3 n = normalize(Normal);
     for( int i = 0; i < 3; i++ ) {

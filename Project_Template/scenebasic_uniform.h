@@ -19,6 +19,10 @@ private:
 
     GLSLProgram prog;
 
+    GLuint quad;
+
+    float angle;
+
     Plane plane;
     std::unique_ptr<ObjMesh> mesh;
     Teapot teapot;
