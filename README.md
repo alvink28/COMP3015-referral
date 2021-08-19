@@ -22,3 +22,5 @@ My shader program uses Physically-based reflection and an attempt on noise rende
 With different roughness settings, we can see the ability of PBR to make metal finishing look better. I used the tutorials on the DLE, combined different techniques and render the trophy model that I found online.
 
 #### link to a video report
+
+https://youtu.be/d4RkcyvJEKk
